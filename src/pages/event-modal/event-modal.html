@@ -1,24 +1,49 @@
 <ion-header>
   <ion-navbar color="primary">
-      <ion-title>{{viewTitle}}</ion-title>
-      <ion-buttons end>
-          <button ion-button [disabled]="isToday" (click)="today()">Today</button>
-          <button ion-button (click)="changeMode('month')">M</button>
-          <button ion-button (click)="changeMode('week')">W</button>
-          <button ion-button (click)="changeMode('day')">D</button>
-          <button ion-button (click)="loadEvents()">Load Events</button>
-      </ion-buttons>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="cancel()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+	<ion-buttons end>
+      <button ion-button icon-only (click)="addEvent()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title><p>&nbsp;&nbsp;Detalles de los Eventos</p></ion-title>
   </ion-navbar>
 </ion-header>
+ 
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label><p>&nbsp;&nbsp;Hora Inicio</p></ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label><p>&nbsp;&nbsp;Hora Fin</p></ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label><p>&nbsp;&nbsp;Ver Todos los Eventos</p></ion-label>
+      <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+ 
+  <button ion-button full icon-left (click)="save()">
+    <ion-icon name="checkmark"></ion-icon> Agregar Evento
+  </button>
 
-<ion-content class="has-header">
-  <calendar [eventSource]="eventSource"
-            [calendarMode]="calendar.mode"
-            [currentDate]="calendar.currentDate"
-            (onCurrentDateChanged)="onCurrentDateChanged($event)"
-            (onEventSelected)="onEventSelected($event)"
-            (onTitleChanged)="onViewTitleChanged($event)"
-            (onTimeSelected)="onTimeSelected($event)"
-            step="30">
-  </calendar>
+  <ion-buttons end>
+    <button ion-button icon-only (click)="addEvent()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-buttons>
+
 </ion-content>

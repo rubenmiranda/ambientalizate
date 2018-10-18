@@ -6,14 +6,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ZonasEcologicasPage } from '../pages/zonas-ecologicas/zonas-ecologicas';
 import { EmpresasPage } from '../pages/empresas/empresas';
 import { PuntosEcologicosPage } from '../pages/puntos-ecologicos/puntos-ecologicos';
-import { EventoModalPage  } from '../pages/event-modal/event-modal';
+
+
 import { CodigoQRPage } from '../pages/codigo-qr/codigo-qr';
 import { PaginaScanerPage } from '../pages/pagina-scaner/pagina-scaner';
 import { InformacionCanecaPage } from '../pages/informacion-caneca/informacion-caneca';
 
-import { NgCalendarModule } from 'ionic2-calendar';
 import { PrincipalPage } from '../pages/principal/principal';
-
+import { EventModalPage } from '../pages/event-modal/event-modal';
+import { HomeEventModalPage } from '../pages/event-modal/event-modal';
 
 
 @Component({
@@ -45,7 +46,7 @@ export class MyApp {
     this.navCtrl.setRoot(PuntosEcologicosPage);
   }goToEventos(params){
     if (!params) params = {};
-    this.navCtrl.setRoot(EventoModalPage);
+    this.navCtrl.setRoot(HomeEventModalPage);
   }goToCodigoQR(params){
     if (!params) params = {};
     this.navCtrl.setRoot(CodigoQRPage);

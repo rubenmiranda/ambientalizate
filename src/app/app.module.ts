@@ -9,12 +9,15 @@ import { EmpresasPage } from '../pages/empresas/empresas';
 import { PuntosEcologicosPage } from '../pages/puntos-ecologicos/puntos-ecologicos';
 import { PaginaScanerPage } from '../pages/pagina-scaner/pagina-scaner';
 import { InformacionCanecaPage } from '../pages/informacion-caneca/informacion-caneca';
-import { EventoModalPage  } from '../pages/event-modal/event-modal';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NgCalendarModule } from 'ionic2-calendar';
+import { EventModalPage } from '../pages/event-modal/event-modal';
+import { HomeEventModalPage } from '../pages/event-modal/event-modal';
+
+
 
 @NgModule({
   declarations: [
@@ -25,8 +28,9 @@ import { NgCalendarModule } from 'ionic2-calendar';
     EmpresasPage,
     PuntosEcologicosPage,
     PaginaScanerPage,
-    EventoModaLPage,
-    InformacionCanecaPage
+    EventModalPage,
+    InformacionCanecaPage,
+	HomeEventModalPage
   ],
   imports: [
     BrowserModule,
@@ -42,8 +46,9 @@ import { NgCalendarModule } from 'ionic2-calendar';
     EmpresasPage,
     PuntosEcologicosPage,
     PaginaScanerPage,
-    EventoModaLPage,
-    InformacionCanecaPage
+    EventModalPage,
+    InformacionCanecaPage,
+	HomeEventModalPage
   ],
   providers: [
     StatusBar,
